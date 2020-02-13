@@ -1,5 +1,4 @@
 import { handleAction, DRINK_COFFEE, EAT_SNACK, TAKE_NAP, STUDY } from './actions';
-// 'STUDY'
 
 describe('ACTIONS', () => {
   it('creates a Drink Coffee action', () => {
