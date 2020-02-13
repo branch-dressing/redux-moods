@@ -1,43 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Controls from '../components/controls/Controls';
 import Face from '../components/face/Face';
+import { drinkCoffee, eatSnack, study, takeNap } from '../actions/actions';
+import { useDispatch, useSelector } from 'react-redux';
+import { getMood } from '../selectors/moodSelector';
 
-export default class Moods extends Component {
-
-  //REDUCER
-  handleSelection = action => {
-    switch(action.type) {
-      case 'DRINK_COFFEE':
-        this.setState(state => ({ coffees: state.coffees + 1 }));
-        break;
-      case 'EAT_SNACK':
-        this.setState(state => ({ snacks: state.snacks + 1 }));
-        break;
-      case 'TAKE_NAP':
-        this.setState(state => ({ naps: state.naps + 1 }));
-        break;
-      case 'STUDY':
-        this.setState(state => ({ studies: state.studies + 1 }));
-        break;
-      default:
-        console.log(`unhandled type: ${action.type}`);
-    }
-  }
-
-  render() {
-    const { coffees, snacks, naps, studies } = this.state;
-    const face = getFace(this.state);
-
-    return (
-      <>
-        <Controls>
-          <button onClick={() => this.handleSelection({ type: 'DRINK_COFFEE' })}>coffee - {coffees}</button>
-          <button onClick={() => this.handleSelection({ type: 'EAT_SNACK' })}>snacks - {snacks}</button>
-          <button onClick={() => this.handleSelection({ type: 'TAKE_NAP' })}>naps - {naps}</button>
-          <button onClick={() => this.handleSelection({ type: 'STUDY' })}>studies - {studies}</button>
-        </Controls>
-        <Face emoji={face} />
-      </>
-    );
-  }
-}
+export const Moods = () => {
+  const dispatch = useDispatch();
+  const { coffees, snacks, naps, studies } = useSelector(getMood);
+  
+  return (
+    <>
+      <Controls>
+        <button onClick={() => dispatch(drinkCoffee())}>coffee - {coffees}</button>
+        <button onClick={() => dispatch(eatSnack())}>snacks - {snacks}</button>
+        <button onClick={() => dispatch(takeNap())}>naps - {naps}</button>
+        <button onClick={() => dispatch(study())}>studies - {studies}</button>
+      </Controls>
+      <Face />
+    </>
+  );
+};

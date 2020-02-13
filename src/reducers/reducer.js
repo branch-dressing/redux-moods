@@ -1,7 +1,12 @@
 import { DRINK_COFFEE, TAKE_NAP, STUDY, EAT_SNACK } from '../actions/actions';
+const initialState = {
+  coffees: 0,
+  snacks: 0,
+  naps: 0,
+  studies: 0
+};
 
-export const reducer = (state, { type }) => {
-  
+export const reducer = (state = initialState, { type }) => {
   switch(type) {
     case DRINK_COFFEE:
       return { ...state, coffees: state.coffees + 1 };
