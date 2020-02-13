@@ -20,4 +20,12 @@ describe('ACTIONS', () => {
       type: EAT_SNACK
     });
   });
+
+  it('creates a naps action', () => {
+    const action = handleAction('TAKE_NAP');
+
+    expect(action).toEqual({
+      type: TAKE_NAP
+    });
+  });
 });
