@@ -1,4 +1,4 @@
-import { DRINK_COFFEE, EAT_SNACKS, TAKE_NAP, STUDY, EAT_SNACK } from '../actions/actions';
+import { DRINK_COFFEE, TAKE_NAP, STUDY, EAT_SNACK } from '../actions/actions';
 
 export const reducer = (state, { type }) => {
   
@@ -7,6 +7,8 @@ export const reducer = (state, { type }) => {
       return { ...state, coffees: state.coffees + 1 };
     case EAT_SNACK:
       return { ...state, snacks: state.snacks + 1 };
+    case TAKE_NAP:
+      return { ...state, naps: state.naps + 1 };
   }
   return state;
 };
