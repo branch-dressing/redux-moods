@@ -20,6 +20,7 @@ export const getFace = state => {
 
 export default class Moods extends Component {
 
+  //REDUCER
   handleSelection = action => {
     switch(action.type) {
       case 'DRINK_COFFEE':
