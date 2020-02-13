@@ -9,4 +9,4 @@ export const reducer = (state, { type }) => {
       return { ...state, snacks: state.snacks + 1 };
   }
   return state;
-}
+};
