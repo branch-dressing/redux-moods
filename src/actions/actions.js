@@ -3,7 +3,18 @@ export const EAT_SNACK = 'EAT_SNACK';
 export const TAKE_NAP = 'TAKE_NAP';
 export const STUDY = 'STUDY';
 
+export const drinkCoffee = () => ({
+  type: DRINK_COFFEE
+});
 
-export const handleAction = name => ({
-  type: name
+export const eatSnack = () => ({
+  type: EAT_SNACK
+});
+
+export const takeNap = () => ({
+  type: TAKE_NAP
+});
+
+export const study = () => ({
+  type: STUDY
 });

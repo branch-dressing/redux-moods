@@ -1,8 +1,8 @@
-import { handleAction, DRINK_COFFEE, EAT_SNACK, TAKE_NAP, STUDY } from './actions';
+import { DRINK_COFFEE, EAT_SNACK, TAKE_NAP, STUDY, drinkCoffee, eatSnack, takeNap, study } from './actions';
 
 describe('ACTIONS', () => {
   it('creates a Drink Coffee action', () => {
-    const action = handleAction('DRINK_COFFEE');
+    const action = drinkCoffee();
 
     expect(action).toEqual({
       type: DRINK_COFFEE
@@ -10,7 +10,7 @@ describe('ACTIONS', () => {
   });
 
   it('creates a snacks action', () => {
-    const action = handleAction('EAT_SNACK');
+    const action = eatSnack();
 
     expect(action).toEqual({
       type: EAT_SNACK
@@ -18,7 +18,7 @@ describe('ACTIONS', () => {
   });
 
   it('creates a naps action', () => {
-    const action = handleAction('TAKE_NAP');
+    const action = takeNap();
 
     expect(action).toEqual({
       type: TAKE_NAP
@@ -26,7 +26,7 @@ describe('ACTIONS', () => {
   });
 
   it('creates a study action', () => {
-    const action = handleAction('STUDY');
+    const action = study();
 
     expect(action).toEqual({
       type: STUDY
