@@ -11,7 +11,7 @@ describe('REDUCER TESTS', () => {
     expect(newState).toEqual({ coffees: 1 });
   });
 
-  it.skip('handle snack case', () => {
+  it('handle snack case', () => {
     const action = eatSnack();
     const intialState = { snacks: 0 };
 
