@@ -1,5 +1,5 @@
 import { reducer } from './reducer';
-import { drinkCoffee, eatSnack, takeNap } from '../actions/actions';
+import { drinkCoffee, eatSnack, takeNap, study } from '../actions/actions';
 
 describe('REDUCER TESTS', () => {
   it('handle coffee case', () => {
@@ -27,5 +27,14 @@ describe('REDUCER TESTS', () => {
     const newState = reducer(intialState, action);
 
     expect(newState).toEqual({ naps: 1 });
+  });
+
+  it('handle study case', () => {
+    const action = study();
+    const intialState = { studies: 0 };
+
+    const newState = reducer(intialState, action);
+
+    expect(newState).toEqual({ studies: 1 });
   });
 });
