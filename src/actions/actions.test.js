@@ -1,7 +1,4 @@
 import { handleAction, DRINK_COFFEE, EAT_SNACK, TAKE_NAP } from './actions';
-
-// 'EAT_SNACK'
-// 'TAKE_NAP' 
 // 'STUDY'
 
 describe('ACTIONS', () => {
@@ -26,6 +23,14 @@ describe('ACTIONS', () => {
 
     expect(action).toEqual({
       type: TAKE_NAP
+    });
+  });
+
+  it('creates a study action', () => {
+    const action = handleAction('STUDY');
+
+    expect(action).toEqual({
+      type: STUDY
     });
   });
 });
