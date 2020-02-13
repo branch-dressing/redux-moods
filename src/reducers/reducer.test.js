@@ -1,3 +1,4 @@
+import { reducer } from './reducer';
 
 describe('REDUCER TESTS', () => {
   it('handle coffee case', () => {
