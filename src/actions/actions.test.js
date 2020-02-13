@@ -1,4 +1,4 @@
-import { handleAction, DRINK_COFFEE, EAT_SNACK, TAKE_NAP } from './actions';
+import { handleAction, DRINK_COFFEE, EAT_SNACK, TAKE_NAP, STUDY } from './actions';
 // 'STUDY'
 
 describe('ACTIONS', () => {
