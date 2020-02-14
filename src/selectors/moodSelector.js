@@ -5,13 +5,13 @@ export const isHyper = state => state.coffees > 3;
 export const isEducated = state => state.studies > 2;
 export const isHungry = state => state.snacks < 1;
 
-export const getFace = state => {
-  if(isTired(state) && isHungry(state)) return '🤬';
-  if(isHyper(state) && isHungry(state)) return '🤮';
-  if(isTired(state)) return '😴';
-  if(isHyper(state)) return '🙀';
-  if(isEducated(state)) return '🤯';
-  if(isHungry(state)) return '😡';
+export const getFace = ({ reducer }) => {
+  if(isTired(reducer) && isHungry(reducer)) return '🤬';
+  if(isHyper(reducer) && isHungry(reducer)) return '🤮';
+  if(isTired(reducer)) return '😴';
+  if(isHyper(reducer)) return '🙀';
+  if(isEducated(reducer)) return '🤯';
+  if(isHungry(reducer)) return '😡';
 
   return '😀';
 };

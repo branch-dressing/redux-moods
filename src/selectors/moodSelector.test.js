@@ -34,30 +34,30 @@ describe('mood selectors', () => {
   });
 
   it('is very angry if tired and hungry', () => {
-    expect(getFace({ coffees: 0, naps: 0, snacks: 0 })).toEqual('🤬');
+    expect(getFace({ reducer: { coffees: 0, naps: 0, snacks: 0 } })).toEqual('🤬');
   });
 
   it('is sick if hyper and hungry', () => {
-    expect(getFace({ coffees: 4, snacks: 0 })).toEqual('🤮');
+    expect(getFace({ reducer: { coffees: 4, snacks: 0 } })).toEqual('🤮');
   });
 
   it('is sleeping if tired', () => {
-    expect(getFace({ coffees: 4, snacks: 0 })).toEqual('🤮');
+    expect(getFace({ reducer: { coffees: 4, snacks: 0 } })).toEqual('🤮');
   });
 
   it('is crazy if hyper', () => {
-    expect(getFace({ coffees: 4, naps: 0, snacks: 0, studies: 0 })).toEqual('🤮');
+    expect(getFace({ reducer: { coffees: 4, naps: 0, snacks: 0, studies: 0 } })).toEqual('🤮');
   });
 
   it('is mindblown if educated', () => {
-    expect(getFace({ coffees: 1, naps: 0, snacks: 1, studies: 3 })).toEqual('🤯');
+    expect(getFace({ reducer: { coffees: 1, naps: 0, snacks: 1, studies: 3 } })).toEqual('🤯');
   });
 
   it('is angry if hungry', () => {
-    expect(getFace({ coffees: 1, naps: 0, snacks: 0, studies: 0 })).toEqual('😡');
+    expect(getFace({ reducer: { coffees: 1, naps: 0, snacks: 0, studies: 0 } })).toEqual('😡');
   });
 
   it('is happy if not tired, hungry, educated, or hungry', () => {
-    expect(getFace({ coffees: 1, naps: 0, snacks: 1, studies: 0 })).toEqual('😀');
+    expect(getFace({ reducer: { coffees: 1, naps: 0, snacks: 1, studies: 0 } })).toEqual('😀');
   });
 });

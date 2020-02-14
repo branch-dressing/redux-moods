@@ -1,4 +1,5 @@
 import { DRINK_COFFEE, TAKE_NAP, STUDY, EAT_SNACK } from '../actions/actions';
+
 const initialState = {
   coffees: 0,
   snacks: 0,
